@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "101328984960",
+    "firebase_url": "https://recipe-express.firebaseio.com",
+    "project_id": "recipe-express",
+    "storage_bucket": "recipe-express.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101328984960:android:4657b6d9ca0608fbe33f65",
+        "android_client_info": {
+          "package_name": "com.leokuyper.recipeexpress"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "101328984960-85hjplcm3pd8hdsrlubfn12u32uc95p8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8V1s7FgZEqSqq1VDFEqUP_SLySFX5mSY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "101328984960-85hjplcm3pd8hdsrlubfn12u32uc95p8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
