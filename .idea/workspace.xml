@@ -18,9 +18,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/leokuyper/recipeexpress/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/leokuyper/recipeexpress/HomeFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/navigation.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +46,7 @@
         <option value="valueResourceFile" />
         <option value="navigationResourceFile" />
         <option value="resourceFile" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -147,30 +148,34 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="699" y="313" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1597856346457">
+    <state x="699" y="313" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1597863827752">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="699" y="313" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1597856346457" />
+    <state x="699" y="313" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1597863827752" />
+    <state x="739" y="274" key="#com.intellij.ide.util.MemberChooser" timestamp="1597864308744">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="739" y="274" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1597864308744" />
     <state x="548" y="313" key="AndroidCreateResourceFileDialog" timestamp="1597860165440">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="548" y="313" key="AndroidCreateResourceFileDialog/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1597860165440" />
-    <state width="939" height="248" key="GridCell.Tab.0.bottom" timestamp="1597860936056">
+    <state width="939" height="248" key="GridCell.Tab.0.bottom" timestamp="1597865019357">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="939" height="248" key="GridCell.Tab.0.bottom/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1597860936056" />
-    <state width="939" height="248" key="GridCell.Tab.0.center" timestamp="1597860936056">
+    <state width="939" height="248" key="GridCell.Tab.0.bottom/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1597865019357" />
+    <state width="939" height="248" key="GridCell.Tab.0.center" timestamp="1597865019356">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="939" height="248" key="GridCell.Tab.0.center/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1597860936056" />
-    <state width="939" height="248" key="GridCell.Tab.0.left" timestamp="1597860936055">
+    <state width="939" height="248" key="GridCell.Tab.0.center/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1597865019356" />
+    <state width="939" height="248" key="GridCell.Tab.0.left" timestamp="1597865019356">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="939" height="248" key="GridCell.Tab.0.left/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1597860936055" />
-    <state width="939" height="248" key="GridCell.Tab.0.right" timestamp="1597860936056">
+    <state width="939" height="248" key="GridCell.Tab.0.left/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1597865019356" />
+    <state width="939" height="248" key="GridCell.Tab.0.right" timestamp="1597865019357">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="939" height="248" key="GridCell.Tab.0.right/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1597860936056" />
+    <state width="939" height="248" key="GridCell.Tab.0.right/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1597865019357" />
     <state x="461" y="190" key="SettingsEditor" timestamp="1597754132442">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
