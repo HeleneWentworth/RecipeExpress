@@ -15,7 +15,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.leokuyper.recipeexpress.databinding.FragmentHomeBinding
-import com.leokuyper.recipeexpress.data.RecipeItem
+import com.leokuyper.recipeexpress.data.RecipePost
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item
@@ -49,11 +49,19 @@ class HomeFragment : Fragment() {
         db = Firebase.firestore
         binding.allRecipesView.adapter = adapter
 
+        adapter.setOnItemClickListener { item, view ->
+            val recipeItem = item as RecipeItem
+            Log.d("Click", "Item ID: ${recipeItem.recipeItem.id}")
+            val action = HomeFragmentDirections.actionHomeFragmentToRecipeDetailFragment(recipeItem.recipeItem.id)
+           findNavController().navigate(action)
+        }
+
         db.collection("recipes").get()
             .addOnSuccessListener {
                 for (recipe in it){
-                    val resultRecipeItem = recipe.toObject<RecipeItem>()
-                    Log.d("RecipeItem", "${resultRecipeItem}")
+                    val resultRecipeItem = recipe.toObject<RecipePost>()
+                    resultRecipeItem.id = recipe.id
+                    Log.d("RecipeItem", "${resultRecipeItem.id}")
                     adapter.add(RecipeItem(resultRecipeItem))
                 }
             }
@@ -69,7 +77,7 @@ class HomeFragment : Fragment() {
 
 }
 
-class RecipeItem(private val recipeItem: RecipeItem) : Item(){
+class RecipeItem(val recipeItem: RecipePost) : Item(){
     override fun bind(viewHolder: GroupieViewHolder, position: Int){
         viewHolder.recipeViewName.text = recipeItem.name
         viewHolder.recipeViewIngredients.text = recipeItem.ingredients
