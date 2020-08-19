@@ -74,7 +74,20 @@
                     app:layout_constraintHorizontal_bias="0.497"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/registerPassword"
+                    app:layout_constraintVertical_bias="0.0"
                     app:layout_goneMarginTop="20dp" />
+
+                <TextView
+                    android:id="@+id/gotologinFragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Already have an Account?"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerSubmit"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:layout_goneMarginTop="15dp" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

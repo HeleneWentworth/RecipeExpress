@@ -61,6 +61,9 @@ class RegisterFragment : Fragment() {
                     Toast.makeText(context, "The registration failed ${it.message}", Toast.LENGTH_SHORT).show()
                 }
         }
+        binding.gotologinFragment.setOnClickListener {
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+        }
 
         return binding.root
     }
