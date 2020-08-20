@@ -36,6 +36,8 @@ class HomeFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: FragmentHomeBinding
     private lateinit var db: FirebaseFirestore
+    private var firstRun = true
+    private var allowChange = true
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,17 +65,48 @@ class HomeFragment : Fragment() {
             val action = HomeFragmentDirections.actionHomeFragmentToRecipeDetailFragment(recipeItem.recipeItem.id)
            findNavController().navigate(action)
         }
+        fun updateRecipeDisplay(){
+            adapter.clear()
+            db.collection("recipes").get()
+                .addOnSuccessListener {
+                    for (recipe in it){
+                        val resultRecipeItem = recipe.toObject<RecipePost>()
+                        resultRecipeItem.id = recipe.id
+                        var search = binding.recipeSearch.text
 
-
-        db.collection("recipes").get()
-            .addOnSuccessListener {
-                for (recipe in it){
-                    val resultRecipeItem = recipe.toObject<RecipePost>()
-                    resultRecipeItem.id = recipe.id
-                    Log.d("RecipeItem", "${resultRecipeItem.id}")
-                    adapter.add(RecipeItem(resultRecipeItem))
+                        if (resultRecipeItem.category.toLowerCase().contains(search.toString().toLowerCase()) || resultRecipeItem.name.toLowerCase().contains(search.toString().toLowerCase())){
+                            Log.d("Search", "${resultRecipeItem.name}")
+                            Log.d("Search", "${resultRecipeItem.category}")
+                            adapter.add(RecipeItem(resultRecipeItem))
+                        }
+                    }
+                    allowChange = true
                 }
+
+        }
+
+        if (firstRun) {
+            Log.d("firstrun", "$firstRun")
+//            db.collection("recipes").get()
+//                .addOnSuccessListener {
+//                    for (recipe in it) {
+//                        val resultRecipeItem = recipe.toObject<RecipePost>()
+//                        resultRecipeItem.id = recipe.id
+//                        Log.d("RecipeItem", "${resultRecipeItem.id}")
+//                        adapter.add(RecipeItem(resultRecipeItem))
+//                    }
+//                }
+//            firstRun = false
+            if (allowChange){
+                allowChange = false
+                updateRecipeDisplay()
             }
+
+        }
+
+        binding.createRecipe.setOnClickListener{
+            findNavController().navigate(R.id.action_homeFragment_to_createRecipeFragment)
+        }
 
         fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
             this.addTextChangedListener(object : TextWatcher {
@@ -81,6 +114,7 @@ class HomeFragment : Fragment() {
                 }
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    //afterTextChanged.invoke(s.toString())
                 }
 
                 override fun afterTextChanged(editable: Editable?) {
@@ -93,25 +127,12 @@ class HomeFragment : Fragment() {
 
             Log.d("Search", "${binding.recipeSearch.text}")
 //            binding.allRecipesView.removeAllViewsInLayout()
-            adapter.clear()
 
-            db.collection("recipes").get()
-                .addOnSuccessListener {
-                    for (recipe in it){
-                        val resultRecipeItem = recipe.toObject<RecipePost>()
-                        resultRecipeItem.id = recipe.id
-                        var search = binding.recipeSearch.text
+            if (allowChange){
+                allowChange = false
+                updateRecipeDisplay()
+            }
 
-                        if (resultRecipeItem.category.toLowerCase().contains(search.toString().toLowerCase()) || resultRecipeItem.name.toLowerCase().contains(search.toString().toLowerCase())){
-                            Log.d("Search", "${resultRecipeItem.name}")
-                            Log.d("Search", "${resultRecipeItem.category}")
-                            adapter.add(RecipeItem(resultRecipeItem))
-                        } else{
-
-                        }
-
-                    }
-                }
 
         }
 
@@ -124,8 +145,7 @@ class HomeFragment : Fragment() {
 
 class RecipeItem(val recipeItem: RecipePost) : Item(){
     override fun bind(viewHolder: GroupieViewHolder, position: Int){
-        viewHolder.recipeViewName.text = recipeItem.name
-        viewHolder.recipeViewIngredients.text = recipeItem.ingredients
+        viewHolder.recipeViewName.text = recipeItem.name + " - " + recipeItem.category
         if(recipeItem.headerImageUrl != "" && recipeItem.headerImageUrl.isNotEmpty()){
             Picasso.get().load(recipeItem.headerImageUrl).fit().centerCrop().into(viewHolder.recipeViewImage)
         }

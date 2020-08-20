@@ -8,29 +8,28 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"        >
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/allRecipesView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/createRecipe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recipeSearch"
             tools:listitem="@layout/fragment_all_recipe" />
 
         <Button
             android:id="@+id/createRecipe"
-            android:layout_width="294dp"
-            android:layout_height="78dp"
-            android:layout_marginBottom="32dp"
+            android:layout_width="293dp"
+            android:layout_height="62dp"
+            android:layout_marginBottom="4dp"
+            android:text="Create New Recipe"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"
@@ -38,9 +37,9 @@
 
         <EditText
             android:id="@+id/recipeSearch"
-            android:layout_width="327dp"
-            android:layout_height="53dp"
-            android:layout_marginTop="36dp"
+            android:layout_width="389dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="4dp"
             android:hint="Recipe Search"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
