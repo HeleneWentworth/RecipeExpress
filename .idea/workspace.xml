@@ -15,15 +15,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/leokuyper/recipeexpress/CreateRecipeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/leokuyper/recipeexpress/CreateRecipeFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/leokuyper/recipeexpress/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/leokuyper/recipeexpress/HomeFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_create_recipe.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_create_recipe.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_register.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_register.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +69,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
       <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
@@ -163,22 +160,22 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="548" y="313" key="AndroidCreateResourceFileDialog/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1597860165440" />
-    <state width="1878" height="248" key="GridCell.Tab.0.bottom" timestamp="1597910532664">
+    <state width="1878" height="248" key="GridCell.Tab.0.bottom" timestamp="1597914442871">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="248" key="GridCell.Tab.0.bottom/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1597910532664" />
-    <state width="1878" height="248" key="GridCell.Tab.0.center" timestamp="1597910532664">
+    <state width="1878" height="248" key="GridCell.Tab.0.bottom/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1597914442871" />
+    <state width="1878" height="248" key="GridCell.Tab.0.center" timestamp="1597914442870">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="248" key="GridCell.Tab.0.center/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1597910532664" />
-    <state width="1878" height="248" key="GridCell.Tab.0.left" timestamp="1597910532663">
+    <state width="1878" height="248" key="GridCell.Tab.0.center/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1597914442870" />
+    <state width="1878" height="248" key="GridCell.Tab.0.left" timestamp="1597914442870">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="248" key="GridCell.Tab.0.left/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1597910532663" />
-    <state width="1878" height="248" key="GridCell.Tab.0.right" timestamp="1597910532664">
+    <state width="1878" height="248" key="GridCell.Tab.0.left/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1597914442870" />
+    <state width="1878" height="248" key="GridCell.Tab.0.right" timestamp="1597914442871">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="248" key="GridCell.Tab.0.right/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1597910532664" />
+    <state width="1878" height="248" key="GridCell.Tab.0.right/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1597914442871" />
     <state x="461" y="190" key="SettingsEditor" timestamp="1597754132442">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
