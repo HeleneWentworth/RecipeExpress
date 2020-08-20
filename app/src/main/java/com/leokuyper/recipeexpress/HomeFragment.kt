@@ -1,11 +1,15 @@
 package com.leokuyper.recipeexpress
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
@@ -14,6 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
+import com.leokuyper.recipeexpress.data.CategoriesGet
 import com.leokuyper.recipeexpress.databinding.FragmentHomeBinding
 import com.leokuyper.recipeexpress.data.RecipePost
 import com.squareup.picasso.Picasso
@@ -21,6 +26,8 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item
 import kotlinx.android.synthetic.main.fragment_all_recipe.*
+import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.coroutines.NonCancellable.children
 import java.text.FieldPosition
 
 
@@ -57,6 +64,7 @@ class HomeFragment : Fragment() {
            findNavController().navigate(action)
         }
 
+
         db.collection("recipes").get()
             .addOnSuccessListener {
                 for (recipe in it){
@@ -67,8 +75,44 @@ class HomeFragment : Fragment() {
                 }
             }
 
-        binding.createRecipe.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_createRecipeFragment)
+        fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
+            this.addTextChangedListener(object : TextWatcher {
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                }
+
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                }
+
+                override fun afterTextChanged(editable: Editable?) {
+                    afterTextChanged.invoke(editable.toString())
+                }
+            })
+        }
+
+        binding.recipeSearch.afterTextChanged {
+
+            Log.d("Search", "${binding.recipeSearch.text}")
+//            binding.allRecipesView.removeAllViewsInLayout()
+            adapter.clear()
+
+            db.collection("recipes").get()
+                .addOnSuccessListener {
+                    for (recipe in it){
+                        val resultRecipeItem = recipe.toObject<RecipePost>()
+                        resultRecipeItem.id = recipe.id
+                        var search = binding.recipeSearch.text
+
+                        if (resultRecipeItem.category.toLowerCase().contains(search.toString().toLowerCase()) || resultRecipeItem.name.toLowerCase().contains(search.toString().toLowerCase())){
+                            Log.d("Search", "${resultRecipeItem.name}")
+                            Log.d("Search", "${resultRecipeItem.category}")
+                            adapter.add(RecipeItem(resultRecipeItem))
+                        } else{
+
+                        }
+
+                    }
+                }
+
         }
 
 
@@ -90,3 +134,4 @@ class RecipeItem(val recipeItem: RecipePost) : Item(){
     override fun getLayout(): Int = R.layout.fragment_all_recipe
 
 }
+

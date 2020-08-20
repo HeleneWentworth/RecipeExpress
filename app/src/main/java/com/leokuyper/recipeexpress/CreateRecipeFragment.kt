@@ -5,23 +5,25 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ktx.storage
+import com.leokuyper.recipeexpress.data.CategoriesGet
 import com.leokuyper.recipeexpress.databinding.FragmentCreateRecipeBinding
-import com.leokuyper.recipeexpress.databinding.FragmentRegisterBinding
+import kotlinx.android.synthetic.main.fragment_create_recipe.*
 import java.util.*
 
 class CreateRecipeFragment : Fragment() {
@@ -48,8 +50,19 @@ class CreateRecipeFragment : Fragment() {
             startActivityForResult(intent, 0)
         }
 
+        db.collection("categories").get()
+            .addOnSuccessListener {
+                for (recipe in it){
+                    val resultCategoryItem = recipe.toObject<CategoriesGet>()
+                    resultCategoryItem.id = recipe.id
+                    Log.d("categories", resultCategoryItem.id)
+                    Log.d("categories", resultCategoryItem.category)
+                }
+            }
+
+
         binding.recipeCreate.setOnClickListener {
-            val blog = hashMapOf(
+            val recipe = hashMapOf(
                 "userId" to auth.currentUser?.uid,
                 "timestamp" to Timestamp.now(),
 
@@ -60,7 +73,7 @@ class CreateRecipeFragment : Fragment() {
             )
 
             db.collection("recipes")
-                .add(blog)
+                .add(recipe)
                 .addOnFailureListener {
                     Log.d("recipes", "Failed to create recipe")
                     Toast.makeText(context, "failed to create recipe", Toast.LENGTH_SHORT).show()
@@ -115,3 +128,4 @@ class CreateRecipeFragment : Fragment() {
 
 
 }
+
