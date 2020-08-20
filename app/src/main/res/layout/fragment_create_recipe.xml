@@ -33,9 +33,11 @@
 
         <EditText
             android:id="@+id/recipeName"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="72dp"
+            android:layout_marginEnd="16dp"
             android:ems="10"
             android:hint="Recipe Name"
             android:inputType="textPersonName"
@@ -47,9 +49,11 @@
 
         <EditText
             android:id="@+id/recipeCategory"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="28dp"
+            android:layout_marginEnd="16dp"
             android:ems="10"
             android:hint="Recipe Category"
             android:inputType="textPersonName"
@@ -61,9 +65,11 @@
 
         <EditText
             android:id="@+id/recipeIngredients"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="28dp"
+            android:layout_marginEnd="16dp"
             android:ems="10"
             android:hint="Recipe Ingredients"
             android:inputType="textPersonName"
@@ -75,9 +81,11 @@
 
         <EditText
             android:id="@+id/recipeSteps"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="28dp"
+            android:layout_marginEnd="16dp"
             android:ems="10"
             android:hint="Recipe Steps"
             android:inputType="textPersonName"
