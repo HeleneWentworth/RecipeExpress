@@ -16,6 +16,7 @@ import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.leokuyper.recipeexpress.databinding.FragmentHomeBinding
 import com.leokuyper.recipeexpress.data.RecipePost
+import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item
@@ -81,6 +82,9 @@ class RecipeItem(val recipeItem: RecipePost) : Item(){
     override fun bind(viewHolder: GroupieViewHolder, position: Int){
         viewHolder.recipeViewName.text = recipeItem.name
         viewHolder.recipeViewIngredients.text = recipeItem.ingredients
+        if(recipeItem.headerImageUrl != "" && recipeItem.headerImageUrl.isNotEmpty()){
+            Picasso.get().load(recipeItem.headerImageUrl).fit().centerCrop().into(viewHolder.recipeViewImage)
+        }
     }
 
     override fun getLayout(): Int = R.layout.fragment_all_recipe

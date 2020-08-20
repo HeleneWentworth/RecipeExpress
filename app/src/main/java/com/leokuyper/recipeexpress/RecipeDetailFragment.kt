@@ -15,6 +15,7 @@ import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.leokuyper.recipeexpress.data.RecipePost
 import com.leokuyper.recipeexpress.databinding.FragmentRecipeDetailBinding
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_recipe_detail.view.*
 
 
@@ -38,12 +39,16 @@ class RecipeDetailFragment : Fragment() {
         db.collection("recipes").document(args.recipeId).get()
             .addOnSuccessListener {
                 val item = it.toObject<RecipePost>()
-                binding.recipeDetailName.setText(item?.name)
-                binding.recipeDetailIngredients.setText(item?.ingredients)
-                binding.recipeDetailSteps.setText(item?.ingredients)
+                binding.recipeDetailName.text = item?.name
+                binding.recipeDetailIngredients.text = item?.ingredients
+                binding.recipeDetailCategory.text = item?.category
+                binding.recipeDetailSteps.text = item?.steps
+                if(item?.headerImageUrl != ""){
+                    Picasso.get().load(item?.headerImageUrl).fit().centerCrop().into(binding.recipeDetailImage)
+                }
             }
             .addOnFailureListener {
-                Toast.makeText(context, "Sorry could not get blog", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Unable to find recipe", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_recipeDetailFragment_to_homeFragment)
             }
 

@@ -20,46 +20,56 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@tools:sample/avatars" />
 
-        <EditText
+        <TextView
             android:id="@+id/recipeDetailName"
-            android:layout_width="142dp"
-            android:layout_height="46dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
-            android:layout_marginEnd="41dp"
+            android:layout_marginEnd="24dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text=""
+            android:text="Name"
             app:layout_constraintEnd_toStartOf="@+id/recipeDetailImage"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
+        <TextView
             android:id="@+id/recipeDetailIngredients"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="156dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text=""
+            android:text="Ingredients"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recipeDetailName" />
+            tools:layout_editor_absoluteY="220dp" />
 
-        <EditText
+        <TextView
             android:id="@+id/recipeDetailSteps"
-            android:layout_width="340dp"
-            android:layout_height="212dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="101dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text=""
+            android:text="Steps"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.309"
+            app:layout_constraintHorizontal_bias="0.08"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recipeDetailIngredients"
             app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/recipeDetailCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="92dp"
+            android:layout_marginBottom="88dp"
+            android:text="Category"
+            app:layout_constraintBottom_toTopOf="@+id/recipeDetailIngredients"
+            app:layout_constraintEnd_toStartOf="@+id/recipeDetailImage"
+            app:layout_constraintHorizontal_bias="0.357"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recipeDetailName"
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
